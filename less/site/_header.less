@@ -1,0 +1,135 @@
+
+// TOP Header
+header#masthead{
+	background: #2f538a;
+	position: relative;
+	padding-bottom: 87px;
+}
+.tops{
+	 //overflow: hidden;
+	background: #24416d;
+	position: relative;
+}
+.rotate{
+	border-top:1px solid #f5f5f5;
+	position: absolute;
+	content:"";
+	width: 30%;
+	height: 50%;
+	top:50%;
+	background: #2f538a;
+}
+.rotate:before{
+	position: absolute;
+	content:"";
+	width: 16px;
+    height: 35px;
+	top:0%;
+	right:-15px;
+	background: #2f538a;
+	transform : rotate(-40deg);
+	
+}
+.top{
+	padding-left:25%;
+	display: flex;
+	justify-content:space-between;
+	height: 46px;
+	color: #9ca4b5;
+	line-height: 46px;
+}
+.top-menu{
+	list-style-type: none;
+	display: flex;
+	li{
+		position: relative;
+		padding:0 10px;
+		a{
+			color:#9ca4b5;
+		}
+	}
+	li.menu-item-has-children:hover >ul.sub-menu{
+		display: block;
+		}
+	.sub-menu{
+		list-style-type: none;
+		display: none;
+		position: absolute;
+		margin:0;
+		li{
+			margin-left: 5px;
+			padding: 0;
+			height: 30px;
+			line-height: 30px;
+		}
+
+	}
+}
+
+
+//site-brand
+
+.site-branding{
+	display: flex;
+	justify-content:space-between;
+}
+.contact-us{
+	display: flex;
+	>div{
+		margin:auto;
+		padding : 0 20px;
+		border-right: 1px solid #4e6d9b;
+		i{
+			color: #39a0c9;
+			font-size: 16px;
+		}
+		p{
+			span{
+				font-size: 13px;
+				color:#bfbfbf;
+			}
+		}
+		p.value{
+			font-size: 16px;
+			font-family: Roboto Bold;
+			color: #ffffff;
+		}
+	}
+	>a{
+		margin:auto;
+		color: #999999;
+		padding:20px;
+		font-size: 13px;
+		font-family: Roboto Bold;
+		background: #ffffff;
+		border-radius: 3px;
+		border: none;
+	}
+}
+// navigation primary
+.navbar-primary{
+	overflow: hidden;
+	bottom: -50px;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	position: absolute;
+	>div{
+
+	}
+}
+.main-navigation{
+	position: relative;
+	display: flex;
+	background: #ffffff;
+}
+.main-navigation:after{
+	content: "";
+	position: absolute;
+	width: 100000px;
+	height: 100px;
+	background: #ffffff;
+}
+.home-link{
+	z-index: 2;
+}
