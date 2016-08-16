@@ -48,7 +48,7 @@ function repairpress_setup() {
 	) );
 
 	register_nav_menus( array(
-		'top-menu' => esc_html__( 'Top-menu', 'repairpress' ),
+		'top-menu' => esc_html__( 'Top menu', 'repairpress' ),
 	) );
 
 	/*
@@ -99,6 +99,15 @@ function repairpress_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar footer', 'repairpress' ),
+		'id'            => 'sidebar-footer',
+		'description'   => esc_html__( 'Add widgets here.', 'repairpress' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'repairpress_widgets_init' );
 
@@ -109,6 +118,12 @@ function repairpress_scripts() {
 	wp_enqueue_style( 'repairpress-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/font-awesome-4.6.3/css/font-awesome.min.css' );
+
+	wp_enqueue_script( 'owl-js', get_template_directory_uri() . '/OwlCarousel-master/owl-carousel/owl.carousel.js', array('jquery'), '20151215', true );
+
+	wp_enqueue_style( 'owl-theme', get_template_directory_uri().'/OwlCarousel-master/owl-carousel/owl.carousel.css' );
+
+	wp_enqueue_style( 'bug-less', get_template_directory_uri().'/bugless.css' );
 
 	wp_enqueue_script( 'repairpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -249,5 +264,16 @@ function my_social_media_icons() {
             }
             echo "</ul>";
         }
+}
+
+
+// add class active in menu
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
 }
 

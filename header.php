@@ -36,7 +36,7 @@
 							 wp_nav_menu( array(
                                 'menu'              => 'top-menu',
                                 'theme_location'    => 'Top-menu',
-                                'depth'             => 2,
+                                'depth'             => 3,
                                 'menu_class'        => 'top-menu'
                                 )
                             );
@@ -78,12 +78,19 @@
 		</div>
 		<div class="navbar-primary">
 			<div class="container">
-
-				<nav id="site-navigation" class="main-navigation " role="navigation">
-					<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><i class="fa fa-home" aria-hidden="true"></i></a>
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'repairpress' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
+				<div class="nodo">
+					<nav id="site-navigation" class="main-navigation " role="navigation">
+						<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><i class="fa fa-home" aria-hidden="true"></i></a>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'repairpress' ); ?></button>
+						<div class="primary-menu-haeder">
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth'=>'3','menu_id' => 'primary-menu' ) ); ?>
+						</div>
+					</nav><!-- #site-navigation -->
+							
+					<div class="social-menu-icons">
+						<?php my_social_media_icons(); ?>		
+					</div>
+				</div>
 			</div>
 		</div>
 	</header><!-- #masthead -->

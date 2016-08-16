@@ -13,7 +13,12 @@
  */
 
 get_header(); ?>
-
+	<div class="description-page">
+		<div class="container">
+			<h1><?php echo the_title(); ?></h1>
+			<p class="desc"><?php the_field('description'); ?></p>
+		</div>
+	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -52,5 +57,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
