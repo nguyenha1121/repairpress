@@ -1,3 +1,114 @@
 .description-page{
 	padding-top:100px;
+	background: #f2f2f2;
+	font-family: Roboto Bold;
+}
+.links{
+	margin-bottom: 50px;
+	height: 50px;
+	line-height: 50px;
+	box-shadow: 0 0px 14px rgba(0, 0, 0, 0.1);
+	a{
+		font-family: Roboto Bold;
+		font-size: 14px;
+		color: #000;
+	}
+	a:hover{
+
+		text-decoration: none;
+	}
+	.act{
+		padding:0 5px;
+	}
+	.this-page{
+		font-family: Roboto Light;
+	}
+}
+.contents{
+	width: ~"calc(75% - 15px)";
+	float: left;
+}
+.right-sidebar{
+	margin-left: 30px;
+	width: ~"calc(25% - 15px)";
+	float:left ;
+}
+.featured-img{
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+.entry-meta{
+	height: 50px;
+	line-height: 50px;
+	text-transform: uppercase;
+	font-family: Roboto Bold;
+	box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
+	a{
+		color: #999999;
+	}
+	.wall{
+		font-family: Roboto Light;
+		padding: 0 10px;
+	}
+}
+.title-post{
+	display: flex;
+	height: 60px;
+	line-height: 60px;
+	margin-top: 20px;
+	h2{
+		font-size: 36px;
+		font-family: Roboto Bold;
+		margin:auto 0px auto 20px ;
+		a{
+			color: #000;
+		}
+		a:hover{
+			text-decoration: none;
+		}
+	}
+	.date-post{
+		line-height:1;
+		width: 50px;
+		height: 60px;
+		display: flex;
+		flex-direction:column;
+		text-align: center;
+		vertical-align: middle;
+		margin:auto 0;
+		justify-content:space-around;
+		font-family: Roboto Bold;
+		border: 1px solid #999999;
+		.day{
+			font-size: 20px;
+		}
+		.mounth{
+			font-size: 14px;
+		}
+		a{
+			color: #999999;
+		}
+		a:hover{
+			text-decoration: none;
+			color:#000;
+		}
+		&:hover{
+			border: 1px solid #000;
+		}
+	}
+}
+.entry-content{
+	margin:10px 0 ;
+	.meta-nav{
+		font-size: 16px;
+	}
+	a.more-link{
+		color: #999999;
+		&:hover{
+			color: #000;
+			text-decoration: none;
+		}
+	}
 }

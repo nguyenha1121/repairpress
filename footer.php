@@ -14,15 +14,11 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 site-infos">
-					TO DO ::
-				</div>
-				<div class="col-md-8 sidebar-footer">
-					<?php get_sidebar('sidebar-footer'); ?>
-				</div>
-			</div>
+		<div class="container sidebar-footer">
+			<?php dynamic_sidebar('sidebar-footer'); ?>	
+		</div>
+		<div class="more-info">
+			TODO::
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

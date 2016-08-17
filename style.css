@@ -59,6 +59,10 @@ and Blueprint http://www.blueprintcss.org/
   font-family: "Roboto Regular";
   src: url('font/Roboto-Regular.ttf');
 }
+@font-face {
+  font-family: "Roboto Light";
+  src: url('font/Roboto-Light.ttf');
+}
 .body {
   font-family: Roboto regular;
   background-color: #f5f5f5;
@@ -1049,8 +1053,164 @@ header#masthead {
 .social-menu-icons > ul li:hover i {
   background-color: #3baed4;
 }
+@media (min-width: 1200px) {
+  .site-header::after {
+    width: -moz-calc(50% - 570px);
+    width: calc(50% - 570px);
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .site-header::after {
+    width: -moz-calc(50% - 470px);
+    width: calc(50% - 470px);
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .site-header::after {
+    width: -moz-calc(50% - 360px);
+    width: calc(50% - 360px);
+  }
+}
+footer#colophon {
+  background: #222e67;
+}
+.sidebar-footer {
+  margin-top: 50px;
+  background: #2f538a;
+  display: -webkit-box!important;
+  display: -webkit-flex!important;
+  display: -moz-box!important;
+  display: -ms-flexbox!important;
+  display: flex!important;
+}
 .description-page {
   padding-top: 100px;
+  background: #f2f2f2;
+  font-family: Roboto Bold;
+}
+.links {
+  margin-bottom: 50px;
+  height: 50px;
+  line-height: 50px;
+  box-shadow: 0 0px 14px rgba(0, 0, 0, 0.1);
+}
+.links a {
+  font-family: Roboto Bold;
+  font-size: 14px;
+  color: #000;
+}
+.links a:hover {
+  text-decoration: none;
+}
+.links .act {
+  padding: 0 5px;
+}
+.links .this-page {
+  font-family: Roboto Light;
+}
+.contents {
+  width: -moz-calc(75% - 15px);
+  width: calc(75% - 15px);
+  float: left;
+}
+.right-sidebar {
+  margin-left: 30px;
+  width: -moz-calc(25% - 15px);
+  width: calc(25% - 15px);
+  float: left ;
+}
+.featured-img img {
+  width: 100%;
+  height: auto;
+}
+.entry-meta {
+  height: 50px;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-family: Roboto Bold;
+  box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
+}
+.entry-meta a {
+  color: #999999;
+}
+.entry-meta .wall {
+  font-family: Roboto Light;
+  padding: 0 10px;
+}
+.title-post {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 20px;
+}
+.title-post h2 {
+  font-size: 36px;
+  font-family: Roboto Bold;
+  margin: auto 0px auto 20px ;
+}
+.title-post h2 a {
+  color: #000;
+}
+.title-post h2 a:hover {
+  text-decoration: none;
+}
+.title-post .date-post {
+  line-height: 1;
+  width: 50px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto 0;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  font-family: Roboto Bold;
+  border: 1px solid #999999;
+}
+.title-post .date-post .day {
+  font-size: 20px;
+}
+.title-post .date-post .mounth {
+  font-size: 14px;
+}
+.title-post .date-post a {
+  color: #999999;
+}
+.title-post .date-post a:hover {
+  text-decoration: none;
+  color: #000;
+}
+.title-post .date-post:hover {
+  border: 1px solid #000;
+}
+.entry-content {
+  margin: 10px 0 ;
+}
+.entry-content .meta-nav {
+  font-size: 16px;
+}
+.entry-content a.more-link {
+  color: #999999;
+}
+.entry-content a.more-link:hover {
+  color: #000;
+  text-decoration: none;
 }
 /*--------------------------------------------------------------
 11.0 Infinite scroll

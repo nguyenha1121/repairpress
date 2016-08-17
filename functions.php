@@ -277,3 +277,14 @@ function special_nav_class ($classes, $item) {
     return $classes;
 }
 
+
+
+//is children
+if(!function_exists('is_child')){
+	function is_child($id){
+		global $post;
+		if(is_page()&&($post->post_parent!='')) return true;
+		else return false;
+	}
+}
+
