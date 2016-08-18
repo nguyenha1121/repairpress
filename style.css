@@ -454,6 +454,121 @@ textarea {
   /* Improves readability and alignment in all browsers */
   width: 100%;
 }
+ol li {
+  list-style-type: none;
+}
+#comments > ol {
+  margin: 0 ;
+}
+.aaaa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.aaaa hr {
+  margin: 10px 0;
+  border-top: 1px solid #8c8b8b;
+  border-bottom: 1px solid #fff;
+}
+.aaaa .cmt {
+  margin-top: 30px;
+  padding: 30px;
+  width: -moz-calc(85% - 15px);
+  width: calc(85% - 15px);
+  background: #f2f2f2;
+}
+.aaaa .cmt > p.entry-meta-author {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+}
+.aaaa .cmt > p.entry-meta-author span.author-name {
+  font-family: Roboto Bold;
+  font-size: 21px;
+  color: #78c7d7;
+}
+.aaaa .cmt > p.entry-meta-author span.author-name a {
+  color: #78c7d7;
+}
+.aaaa .cmt > p.entry-meta-author span.date-reply {
+  font-family: Roboto Regular;
+  color: #999999;
+}
+.aaaa .cmt > p.entry-meta-author span.date-reply a {
+  color: #78c7d7;
+  margin-left: 10px;
+}
+.aaaa .cmt > p.entry-meta-author:after {
+  position: absolute;
+  content: "";
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #f2f2f2;
+  top: 0%;
+  right: -44px;
+}
+.aaaa .cmt p.comment-content {
+  color: #999999;
+  font-family: Roboto Regular;
+}
+.aaaa .avt {
+  margin-top: 30px;
+  width: -moz-calc(15% - 15px);
+  width: calc(15% - 15px);
+}
+.comments-link a {
+  color: #000;
+}
+.comments-link a:visited {
+  color: #000;
+}
+.comments-link a:hover {
+  color: #000;
+  text-decoration: none;
+  font-style: italic;
+}
+#respond {
+  padding-top: 50px;
+}
+#commentform {
+  padding-bottom: 100px;
+}
+#commentform input {
+  height: 60px;
+  border: none;
+  background: #f2f2f2;
+  padding-left: 10px;
+  font-size: 14px;
+  width: 35%;
+}
+#commentform input#submit {
+  width: 25%;
+  background: #78c7d7;
+  box-shadow: none;
+  font-family: Roboto Bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#commentform textarea {
+  border: none;
+  background: #f2f2f2;
+  padding: 15px 0 0 10px;
+}
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
@@ -1177,9 +1292,11 @@ footer#colophon {
   text-align: center;
   vertical-align: middle;
   margin: auto 0;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: Roboto Bold;
   border: 1px solid #999999;
 }
@@ -1211,6 +1328,44 @@ footer#colophon {
 .entry-content a.more-link:hover {
   color: #000;
   text-decoration: none;
+}
+div.title-team {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+div.title-team .our-team {
+  width: 20%;
+  font-size: 35px;
+  font-family: Roboto Bold;
+}
+div.title-team .line {
+  width: 80%;
+  height: 2px;
+  background: #f2f2f2;
+  margin: auto 0;
+}
+.content-team {
+  background: red;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.content-team .item-team {
+  background: blue;
+  width: 30%;
 }
 /*--------------------------------------------------------------
 11.0 Infinite scroll

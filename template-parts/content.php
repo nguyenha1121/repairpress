@@ -43,6 +43,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php repairpress_entry_footer(); ?>
+		<?php //repairpress_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

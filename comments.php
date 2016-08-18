@@ -21,53 +21,24 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
-
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'repairpress' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
+				echo '<span class="comments-link">';
+				/* translators: %s: post title */
+				comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'repairpress' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+				echo '</span>';
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'repairpress' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'repairpress' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'repairpress' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
-
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
+				wp_list_comments('type=comment&callback=repairpress_comment' );
 			?>
 		</ol><!-- .comment-list -->
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'repairpress' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'repairpress' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'repairpress' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
 		<?php
-		endif; // Check for comment navigation.
 
 	endif; // Check for have_comments().
 
@@ -78,8 +49,30 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'repairpress' ); ?></p>
 	<?php
 	endif;
+     $args = array(
+     'fields' => apply_filters(
+          'comment_form_default_fields', array(
+               'author' =>'<p class="comment-form-author">' . '<input id="author" placeholder="Your Name (No Keywords)" name="author" type="text" value="' .
+                    esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />'.
+                    '</p>'
+                    ,
+               'email'  => '<p class="comment-form-email">' . '<input id="email" placeholder="your-real-email@example.com" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+                    '" size="30"' . $aria_req . ' />'  .
+                    '</p>',
+               'url'    => '<p class="comment-form-url">' .
+                '<input id="url" name="url" placeholder="http://your-site-name.com" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> ' .
+                '</p>'
+          )
+     ),
+     'comment_field' => '<p class="comment-form-comment">' .
+          '<textarea id="comment" name="comment" placeholder="Express your thoughts, idea or write a feedback by clicking here & start an awesome comment" cols="45" rows="8" aria-required="true"></textarea>' .
+          '</p>',
+     'comment_notes_before'=>'',
+    'comment_notes_after' => '',
+    'title_reply' => '<div class="crunchify-text"> <h2>While a comment: </h2></div>'
+);
+    comment_form($args);
+ ?>
 
-	comment_form();
-	?>
 
 </div><!-- #comments -->
