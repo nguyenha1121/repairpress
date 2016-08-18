@@ -8008,3 +8008,114 @@ button.close {
     display: none !important;
   }
 }
+/*--------------------------------------------------------------
+14.0 Layout
+--------------------------------------------------------------*/
+.right-sidebar .widget .widget-title {
+  font-family: Roboto Bold;
+  font-size: 27px;
+}
+.right-sidebar input.search-submit {
+  display: inline;
+}
+.right-sidebar .widget_search .widget-title {
+  display: none;
+}
+.right-sidebar .widget_search form.searchform {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.right-sidebar .widget_search form.searchform input#s {
+  width: 70%;
+  padding-left: 10px;
+  background: #f2f2f2;
+  border: none;
+  color: #999999;
+}
+.right-sidebar .widget_search form.searchform button#searchsubmit {
+  width: 30%;
+  box-shadow: none;
+  font-family: Roboto Bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #78c7d7;
+}
+.right-sidebar .widget_categories ul {
+  margin: 0;
+}
+.right-sidebar .widget_categories ul li.cat-item {
+  list-style-type: none;
+  text-transform: uppercase;
+  font-family: Roboto Bold;
+  font-size: 14px;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #999999;
+  position: relative;
+}
+.right-sidebar .widget_categories ul li.cat-item a {
+  color: #999999;
+}
+.right-sidebar .widget_categories ul li.cat-item a:hover {
+  text-decoration: none;
+  font-style: italic;
+}
+.right-sidebar .widget_categories ul li.cat-item:after {
+  position: absolute;
+  content: "";
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #dddddd;
+  top: 20px;
+  right: 0;
+}
+.right-sidebar .widget_text {
+  padding: 15px;
+  border: 1px solid #dddddd;
+  box-shadow: 0px 0px 14px -2px #999999;
+}
+.right-sidebar .widget_tag_cloud .tagcloud {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-wrap: wrap ;
+  -ms-flex-wrap: wrap ;
+  flex-wrap: wrap ;
+}
+.right-sidebar .widget_tag_cloud .tagcloud a {
+  padding: 10px 15px;
+  background: #eeeeee;
+  color: #aaaaaa;
+  font-family: Roboto Bold;
+  text-transform: uppercase;
+}
+.right-sidebar .widget_recent_comments ul {
+  margin: 0 0 0.5em 1em;
+}
+.right-sidebar .widget_recent_comments ul li {
+  color: #78c7d7;
+}
+.right-sidebar .widget_recent_comments ul li a {
+  color: #78c7d7;
+}
+.right-sidebar .widget_meta ul {
+  margin: 0 0 0.5em 1em;
+}
+.right-sidebar .widget_meta ul li {
+  color: #78c7d7;
+}
+.right-sidebar .widget_meta ul li a {
+  color: #78c7d7;
+}

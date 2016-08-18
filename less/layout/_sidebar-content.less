@@ -1,20 +1,114 @@
-.content-area {
-	float: right;
-	margin: 0 0 0 (-@size__site-sidebar);
-	width: @size__site-main;
-}
-
-.site-main {
-	margin: 0 0 0 @size__site-sidebar;
-}
-
-.site-content .widget-area {
-	float: left;
-	overflow: hidden;
-	width: @size__site-sidebar;
-}
-
-.site-footer {
-	clear: both;
-	width: @size__site-main;
+.right-sidebar{
+	.widget{
+		.widget-title{
+			font-family: Roboto Bold;
+			font-size: 27px;
+		}
+	}
+	input.search-submit{
+		display: inline;
+	}
+	//widget search
+	.widget_search{
+		.widget-title{
+			display: none;
+		}
+		form.searchform{
+			width: 100%;
+			height: 60px;
+			display: flex;
+			input#s{
+				width: 70%;
+				padding-left: 10px;
+				background: #f2f2f2;
+				border: none;
+				color: #999999;
+			}
+			button#searchsubmit{
+				width: 30%;
+				box-shadow: none;
+				font-family: Roboto Bold;
+				text-transform: uppercase;
+				color: #ffffff;
+				background: #78c7d7;
+			}
+		}
+	}
+	//widget widget_categories
+	.widget_categories{
+		ul{
+			margin:0;
+			li.cat-item{
+				list-style-type: none;
+				text-transform: uppercase;
+				font-family: Roboto Bold;
+				font-size: 14px;
+				height: 60px;
+				line-height: 60px;
+				border-bottom: 1px solid #999999;
+				position: relative;
+				a{
+					color: #999999;
+				}
+				a:hover{
+					text-decoration: none;
+					font-style: italic;
+				}
+				&:after{
+					position: absolute;
+					content:"";
+					border-top: 10px solid transparent;
+					border-bottom: 10px solid transparent;			  
+					border-left: 10px solid #dddddd;
+					top: 20px;
+					right: 0;
+				}
+			}
+		}
+	}
+	//widget widget_text
+	.widget_text{
+		padding:15px;
+		border:1px solid #dddddd;
+		box-shadow: 0px 0px 14px -2px #999999;
+	}
+	//widget widget_tag_cloud
+	.widget_tag_cloud{
+		.tagcloud{
+			display: flex;
+			justify-content:flex-start;
+			flex-wrap:wrap ;
+			a{
+				padding: 10px 15px;
+				background: #eeeeee;
+				color: #aaaaaa;
+				font-family: Roboto Bold;
+				text-transform: uppercase;
+			}
+		}
+	}
+	//widget widget_recent_comments
+	.widget_recent_comments{
+		ul{
+			margin: 0 0 0.5em 1em;
+			li{
+				color:#78c7d7;
+				a{
+					color: #78c7d7;
+				}
+			}
+		}
+	}
+	//widget widget_meta
+	.widget_meta{
+		ul{
+			margin: 0 0 0.5em 1em;
+			li{
+				color:#78c7d7;
+				a{
+					color: #78c7d7;
+				}
+			}
+		}
+	}
 }
