@@ -1367,6 +1367,188 @@ div.title-team .line {
   background: blue;
   width: 30%;
 }
+#main-contact {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+#main-contact h3 {
+  font-family: Roboto Bold;
+  font-size: 27px;
+  margin: 0 0 30px 0;
+}
+#main-contact > div {
+  padding-top: 50px;
+}
+.contact-info {
+  width: -moz-calc(25% - 15px);
+  width: calc(25% - 15px);
+}
+.contact-info ul {
+  margin: 0;
+  box-shadow: 0px 2px 9px 1px #999999;
+}
+.contact-info ul li {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #999999;
+  padding: 20px 0;
+  margin: 0 20px;
+}
+.contact-info ul li p.bold {
+  font-family: Roboto Bold;
+  color: #000;
+}
+.contact-info ul li p {
+  font-family: Roboto Regular;
+  color: #999999;
+}
+.contact-info ul li i {
+  font-size: 20px;
+  color: #78c7d7;
+  margin-right: 15px;
+}
+.map-location {
+  width: -moz-calc(75% - 15px);
+  width: calc(75% - 15px);
+}
+.map-location iframe {
+  width: 100%;
+}
+.contact-main-form {
+  width: -moz-calc(75% - 15px);
+  width: calc(75% - 15px);
+}
+.open-time {
+  width: -moz-calc(25% - 15px);
+  width: calc(25% - 15px);
+}
+.open-time ul {
+  width: 100%;
+  margin: 0;
+  box-shadow: 0px 2px 9px 1px #999999;
+  padding: 20px 10px;
+}
+.open-time ul li {
+  font-family: Roboto Regular;
+  color: #999999;
+  padding: 5px 0;
+  margin: 0 20px;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.open-time ul li span.timming {
+  text-transform: uppercase;
+}
+.open-time ul li.monday-Monday {
+  font-family: Roboto Bold;
+  color: #000;
+}
+.open-time ul li.tuesday-Tuesday {
+  font-family: Roboto Bold;
+  color: #000;
+}
+.open-time ul li.wednesday-Wednesday {
+  font-family: Roboto Bold;
+  color: #000;
+}
+.open-time ul li.thursday-Thursday {
+  font-family: Roboto Bold;
+  color: #000;
+}
+.open-time ul li.friday-Friday {
+  font-family: Roboto Bold;
+  color: #000;
+}
+.open-time ul li.saturday-Saturday {
+  font-family: Roboto Bold;
+  color: #000;
+}
+.open-time ul li.sunday-Sunday {
+  font-family: Roboto Bold;
+  color: #000;
+}
+.wpcf7 form.wpcf7-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.wpcf7 .left-form {
+  width: -moz-calc(34% - 15px);
+  width: calc(34% - 15px);
+}
+.wpcf7 .right-form {
+  width: -moz-calc(66% - 15px);
+  width: calc(66% - 15px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+.wpcf7 .right-form textarea {
+  height: 220px;
+  border: none;
+  background-color: #f2f2f2;
+}
+.wpcf7 .right-form input {
+  width: 100px;
+  height: 60px;
+  box-shadow: none;
+  background-color: #78c7d7;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.wpcf7 .inp {
+  height: 60px;
+  line-height: 60px;
+  border: none;
+  width: 100%;
+  background: #f2f2f2;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
