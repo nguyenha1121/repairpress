@@ -123,6 +123,8 @@ function repairpress_scripts() {
 
 	wp_enqueue_style( 'owl-theme', get_template_directory_uri().'/OwlCarousel-master/owl-carousel/owl.carousel.css' );
 
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/customizer.js', array('jquery'), '20151215', true );
+
 	wp_enqueue_style( 'bug-less', get_template_directory_uri().'/bugless.css' );
 
 	wp_enqueue_script( 'repairpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -389,3 +391,21 @@ if(!function_exists('repairpress_comment')){
 		<?php
 	}
 }
+
+// shortcode home page
+
+function sc_home_slider($args,$content){
+	return '<div class="item">
+				<div class="container">
+					<p class="slp-1">'.$args['t1'].'</p>
+					<p class="slp-2">'.$args['t2'].'</p>
+					<p class="slp-3">'.$args['t3'].'</p>
+					<div class="cl-but">
+						<span class="but-1"><a  href="'.$args['t4'].'">'.$args['t5'].'</a></span>
+						<span class="but-2"><a  href="'.$args['t6'].'">'.$args['t7'].'</a></span>
+					</div>
+				</div>
+			</div>';
+}
+add_shortcode('home_slider','sc_home_slider');
+

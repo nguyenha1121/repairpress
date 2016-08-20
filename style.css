@@ -63,6 +63,10 @@ and Blueprint http://www.blueprintcss.org/
   font-family: "Roboto Light";
   src: url('font/Roboto-Light.ttf');
 }
+@font-face {
+  font-family: "Roboto Thin";
+  src: url('font/Roboto-Thin.ttf');
+}
 .body {
   font-family: Roboto regular;
   background-color: #f5f5f5;
@@ -872,6 +876,61 @@ a:active {
   clear: both;
   margin: 0 0 1.5em;
 }
+.error-404 .page-header {
+  border: none;
+}
+.main-404 {
+  margin-bottom: 200px;
+  margin-top: 100px;
+  text-align: center;
+}
+.main-404 form.searchform {
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.main-404 form.searchform input#s {
+  width: 70%;
+  padding-left: 10px;
+  background: #f2f2f2;
+  border: none;
+  color: #999999;
+}
+.main-404 form.searchform button#searchsubmit {
+  width: 30%;
+  box-shadow: none;
+  font-family: Roboto Bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #78c7d7;
+}
+.main-404 h1.page-title {
+  font-size: 160px;
+  color: #ffffff;
+  text-shadow: 9px 12px 21px #999999;
+  font-family: Roboto Bold;
+}
+.main-404 .p1 {
+  font-family: Roboto Bold;
+  color: #000;
+  font-size: 27px;
+}
+.main-404 p {
+  font-size: 14px;
+  font-family: Roboto Regular;
+  color: #999999;
+}
+.main-404 p a {
+  color: #78c7d7;
+}
+.main-404 p a:hover {
+  text-decoration: none;
+}
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
@@ -1548,6 +1607,87 @@ div.title-team .line {
   background: #f2f2f2;
   padding-left: 10px;
   margin-bottom: 20px;
+}
+.owl-demo {
+  position: relative;
+}
+.slider {
+  background-color: #eeeeee;
+}
+.slider .item {
+  padding-top: 100px;
+  color: #3d3d3d;
+  width: 100%;
+  height: 560px;
+}
+.slider .item .slp-1 {
+  margin: 0;
+  font-family: Roboto Thin;
+  font-size: 48px;
+}
+.slider .item .slp-2 {
+  margin: 0;
+  font-family: Roboto Bold;
+  font-size: 48px;
+}
+.slider .item .slp-3 {
+  margin-top: 40px;
+  width: 45%;
+  font-family: Roboto Light;
+  font-size: 16px;
+}
+.slider .item .cl-but {
+  margin-top: 40px;
+  font-family: Roboto Bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 60px;
+  line-height: 60px;
+}
+.slider .item .cl-but span {
+  height: 60px;
+  padding: 25px;
+}
+.slider .item .cl-but .but-1 {
+  background: #78c7d7;
+}
+.slider .item .cl-but .but-1 a {
+  font-size: 14px;
+  color: #fff;
+}
+.slider .item .cl-but .but-2 {
+  margin-left: 30px;
+  background: #ffffff;
+}
+.slider .item .cl-but .but-2 a {
+  font-size: 14px;
+  color: #3d3d3d;
+}
+.owl-prev {
+  position: absolute;
+  top: 48%;
+  left: 10px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  background: #ffffff;
+}
+.owl-prev i {
+  font-size: 16px;
+}
+.owl-next {
+  background: #ffffff;
+  position: absolute;
+  top: 48%;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+}
+.owl-next i {
+  font-size: 16px;
 }
 /*--------------------------------------------------------------
 11.0 Infinite scroll

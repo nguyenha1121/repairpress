@@ -7,12 +7,26 @@
  */
 
 
+jQuery(document).ready(function($){
 
-// jQuery(document).ready(function($){
-// 	$('.menu-item-has-children').hover(function(){
-		
-// 	});
-// });
+  $("#owl-demo").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+ 	  pagination: false,
+ 	  navigationText: ['<i class="fa fa-caret-left" aria-hidden="true"></i>','<i class="fa fa-caret-right" aria-hidden="true"></i>']	
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 	
+  });
+});
+
 
 
 

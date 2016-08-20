@@ -24,6 +24,13 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script>	
+	// var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+	//   var marker = new google.maps.Marker({
+	//     position: myLatLng,
+	//     map: map,
+	//     icon: iconBase + './img/icons-map.png'
+	//   });
+</script>
 </body>
 </html>
