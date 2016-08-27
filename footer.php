@@ -18,19 +18,11 @@
 			<?php dynamic_sidebar('sidebar-footer'); ?>	
 		</div>
 		<div class="more-info">
-			TODO::
+			<?php my_bank_cards(); ?>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script>	
-	// var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-	//   var marker = new google.maps.Marker({
-	//     position: myLatLng,
-	//     map: map,
-	//     icon: iconBase + './img/icons-map.png'
-	//   });
-</script>
 </body>
 </html>

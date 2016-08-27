@@ -137,6 +137,8 @@ function repairpress_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'repairpress_scripts' );
 
+
+require_once( CORE . "/init.php" );
 /**
  * Implement the Custom Header feature.
  */
@@ -170,7 +172,10 @@ require get_template_directory() . '/inc/jetpack.php';
 //Add customizer option------------------------------------------------------------------------------------------------------------------------------------
 
 
-
+function my_customizer_bank_card_icon(){
+	$cards = array('paypal','visa','amex','mastercard');
+	return $cards;
+}
 
 function my_customizer_social_media_array() {
 
@@ -188,10 +193,15 @@ function my_add_customizer($wp_customize) {
 			'priority' => 36,
 	) );
  	
-
+	$cards = my_customizer_bank_card_icon();
 	$social_sites = my_customizer_social_media_array();
 	$priority = 5;
- 
+ 	
+	$wp_customize->add_section( 'bank_cards', array(
+			'title'    => __('Bank cards', 'repairpress'),
+			'priority' => 37,
+	) );
+
 	foreach($social_sites as $social_site) {
  
 		$wp_customize->add_setting( "$social_site", array(
@@ -209,6 +219,23 @@ function my_add_customizer($wp_customize) {
  
 		$priority = $priority + 5;
 	}
+	foreach($cards as $card) {
+ 
+		$wp_customize->add_setting( "$card", array(
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'esc_url_raw'
+		) );
+ 
+		$wp_customize->add_control( $card, array(
+				'label'    => __( "$card url:", 'repairpress' ),
+				'section'  => 'bank_cards',
+				'type'     => 'text',
+				'priority' => $priority,
+		) );
+ 
+		$priority = $priority + 5;
+	}
 //Description Site
 	$wp_customize->add_section( 'description-Top', array(
 		'title'		=> __('Description Top','repairpress'),
@@ -217,7 +244,7 @@ function my_add_customizer($wp_customize) {
 	$wp_customize->add_setting('description-Top',array(
 		'type'				=> 'theme_mod',
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'esc_url_raw'
+		'sanitize_callback' => 'esc_html'
 		));
 	$wp_customize->add_control( 'description-Top', array(
 				'label'    => __( "Description", 'repairpress' ),
@@ -227,6 +254,39 @@ function my_add_customizer($wp_customize) {
 		) );
 
 }
+function my_bank_cards() {
+ 
+    $cards = my_customizer_bank_card_icon();
+ 
+    /* any inputs that aren't empty are stored in $active_sites array */
+    foreach($cards as $card) {
+        if( strlen( get_theme_mod( $card ) ) > 0 ) {
+            $active_cards[] = $card;
+        }
+    }
+ 
+    /* for each active social site, add it as a list item */
+        if ( ! empty( $active_cards ) ) {
+ 
+            echo "<ul class='cards'>";
+ 
+            foreach ( $active_cards as $active_card ) {
+ 
+	            /* setup the class */
+		        $class = 'fa fa-cc-' . $active_card;
+		        ?>
+                    <li>
+                        <a class="<?php echo $active_card; ?>" target="_blank" href="<?php echo esc_url( get_theme_mod( $active_card) ); ?>">
+                            <i class="<?php echo esc_attr( $class ); ?>" title="<?php printf( __('%s icon', 'text-domain'), $active_card ); ?>"></i>
+                        </a>
+                    </li>
+                <?php
+               
+            }
+            echo "</ul>";
+        }
+}
+
 function my_social_media_icons() {
  
     $social_sites = my_customizer_social_media_array();
