@@ -13,8 +13,20 @@
  */
 
 get_header(); ?>
-	
-	<div id="primary" class="content-area">
+	<div class="links">
+		<div class="container">
+			<a class="" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+            <!--<?php if(is_child(the_ID())) : ?>  -->
+                <span class="act"><i class="fa fa-caret-right" aria-hidden="true"></i></span>
+                <a href="<?php echo get_the_permalink($post->post_parent); ?>"><?php echo get_the_title($post->post_parent); ?></a>
+           <!--  <?php endif; ?> -->
+            <?php if(!is_home()) : ?>
+                <span class="act"><i class="fa fa-caret-right" aria-hidden="true"></i></span>
+                <a class="this-page" href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+            <?php endif; ?>
+		</div>
+	</div>
+	<div id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -33,19 +45,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<div class="links">
-		<div class="container">
-			<a class="" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
-            <!--<?php if(is_child(the_ID())) : ?>  -->
-                <span class="act"><i class="fa fa-caret-right" aria-hidden="true"></i></span>
-                <a href="<?php echo get_the_permalink($post->post_parent); ?>"><?php echo get_the_title($post->post_parent); ?></a>
-           <!--  <?php endif; ?> -->
-            <?php if(!is_home()) : ?>
-                <span class="act"><i class="fa fa-caret-right" aria-hidden="true"></i></span>
-                <a class="this-page" href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
-            <?php endif; ?>
-		</div>
-	</div>
+	
 <?php
 // get_sidebar(sidebar-1);
 get_footer();

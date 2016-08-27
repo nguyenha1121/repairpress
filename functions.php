@@ -409,3 +409,207 @@ function sc_home_slider($args,$content){
 }
 add_shortcode('home_slider','sc_home_slider');
 
+function sc_banner_item($args,$content){
+	return '<div class="item-banner">
+			<div class="banner-text">
+				<p class="main-banner">'.$args['t1'].'</p>
+				<p class="desc-banner">'.$args['t2'].'</p>
+			</div>
+			<div class="banner-icon">
+				<i class="fa '.$args['t3'].'" aria-hidden="true"></i>
+			</div>
+		</div>';
+}
+add_shortcode('banner_item','sc_banner_item');
+
+function sc_first_row_1($args, $content){
+	return '<div class="first-row-item fri1">
+			<img src="'.$args['src-img'].'" alt="nothing">
+			<p class="title-fri">'.$args['title'].'</p>
+			<p class="except-fri">'.$args['except'].'</p>
+			<a class="read-more-fri" href="'.$args['src-readmore'].'">read more &nbsp;<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+		</div>';
+}
+add_shortcode('fri1','sc_first_row_1');
+
+function sc_fri2($args, $content){
+	return '<li>
+				<a href="'.$args['href'].'"><i class="fa '.$args['name-i-tag'].'" aria-hidden="true"></i>&nbsp; <p>'.$args['title'].'</p></a>
+			</li>';
+}
+add_shortcode('fri2','sc_fri2');
+
+function sc_row_2_steps($args,$content){
+	GLOBAL $st_c;
+	$st_c +=1;
+	if ($args['active']==true){
+		if($st_c <10){
+			return '<div class="step active">
+					<div class="title-st"><i class="fa '.$args['i-tag'].'" aria-hidden="true"></i><p>'.$args['title'].'</p></div>
+					<p class="desc-st">'.$args['desc'].'</p>
+					<p class="count-st">'.'0'.$st_c.'.'.'</p>
+				</div>';
+		}
+		else {
+			return '<div class="step active">
+					<div class="title-st"><i class="fa '.$args['i-tag'].'" aria-hidden="true"></i><p>'.$args['title'].'</p></div>
+					<p class="desc-st">
+						'.$args['desc'].'
+					</p>
+					<p class="count-st">'.$st_c.'.'.'</p>
+				</div>';
+		}
+	}
+	if($st_c <10){
+		return '<div class="step">
+				<div class="title-st"><i class="fa '.$args['i-tag'].'" aria-hidden="true"></i><p>'.$args['title'].'</p></div>
+				<p class="desc-st">'.$args['desc'].'</p>
+				<p class="count-st">'.'0'.$st_c.'.'.'</p>
+			</div>';
+	}
+	else {
+		return '<div class="step">
+				<div class="title-st"><i class="fa '.$args['i-tag'].'" aria-hidden="true"></i><p>'.$args['title'].'</p></div>
+				<p class="desc-st">
+					'.$args['desc'].'
+				</p>
+				<p class="count-st">'.$st_c.'.'.'</p>
+			</div>';
+	}
+	
+}
+add_shortcode('row_2_steps','sc_row_2_steps');
+
+function sc_third_row($args,$content){
+	return '<div class="item-tr">
+				<div class="icon-tr"><i class="fa '.$args['i-tag'].'" aria-hidden="true"></i></div>
+				<div>
+					<p class="title-tr">'.$args['title'].'</p>
+					<p class="desc-tr">'.$args['desc'].'</p>
+				</div>
+			</div>';
+}
+add_shortcode('third_row','sc_third_row');
+
+function sc_sell_row($args,$content){
+	return '<div class="sell-phone">
+				<div class="container">
+					<div class="content-sell">
+						<div class="sell-text">
+							<p class="title-sell">'.$args['title'].'</p>
+							<p class="desc-sell">'.$args['desc'].'</p>
+						</div>
+						<div class="but-sell">
+							<a href="'.$args['href'].'">'.$args['button'].'</a>
+						</div>
+					</div>
+				</div>
+			</div>';
+}
+add_shortcode('sell-row','sc_sell_row');
+
+function sc_eden_blog_div($args, $content){
+    $query = new WP_Query(
+                array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 2
+                    )
+            );
+
+    if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>    
+        <div class="blog-card">
+        <div class="card-images">
+            <?php the_post_thumbnail("thumbnail"); ?>
+        </div>
+        <div class="card-content">
+            <header>
+                <?php 
+                    the_title( '<span><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a><span>' );
+                ?>
+            </header>
+            <?php echo '<p class="date-blog">'.get_the_date().'</p>'; ?>
+        </div>
+    </div>
+    <?php endwhile; endif; 
+}
+add_shortcode('blog','sc_eden_blog_div');
+
+function sc_about_us($args,$content){
+	?>
+	<div class="about-us-home">
+		<div class="title-us">
+			<p><?php echo $args['title-us']; ?></p>
+			<span></span>
+		</div>
+		<div class="imgs">
+			<img src="<?php echo $args['src-img1']; ?>" alt="">
+			<img src="<?php echo $args['src-img2']; ?>" alt="">
+		</div>
+		<div class="except">
+			<?php echo $args['except-us']; ?>
+		</div>
+		<a class="read-us" href="<?php echo $args['href']; ?>">read more &nbsp; <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+	</div>
+	<?php
+}
+add_shortcode('about_us','sc_about_us');
+
+function sc_accordion_faq($args,$content){
+	?>
+	<li>
+		<p class="title-acc"><?php echo $args['title'] ?></p>
+		<?php 
+			$word = explode(" ", $args['content']);
+			if(count($word) <= $args['max-length']){
+				return '<div class="item-acc">
+							<p class="except-acc">'.$args['content'].'</p>
+						</div>
+					</li>';
+			}
+			else {
+				?>
+					<div class="item-acc">
+						<span class="except-acc">
+						<?php for($i=0 ; $i<$args['max-length']; $i++){
+							echo $word[$i]." ";} 
+						?>
+						</span>
+						<span class="more-acc">
+							<?php for($i=$args['max-length'] ; $i<=count($word); $i++){
+								echo $word[$i]." ";} 
+							?>
+						</span>
+						<p class="read-more-acc" >read more &nbsp; <i class="fa fa-caret-right" aria-hidden="true"></i></p>
+					</div>
+				</li>
+				<?php
+			}
+		?>
+	<?php
+}
+add_shortcode('accordion_faq','sc_accordion_faq');
+
+function sc_link_readmore_faq($args,$content){
+	return ''.$args['href'];
+}
+add_shortcode('link_readmore_faq','sc_link_readmore_faq');
+
+function sc_add_map($args,$content){
+	return '<div class="row-map">'.$content.'</div>';
+}
+add_shortcode('add_map','sc_add_map');
+
+function sc_item_gallery($args,$content){
+	?>
+	<div class="item-gallery col-md-3 col-sm-3 col-xs-6">
+		<div class="imgs-g">
+			<img src="<?php echo $args['src-before'] ;?>" alt="before">
+			<img src="<?php echo $args['src-after'] ;?>" alt="after">
+		</div>
+		<p class="desc-g">
+			<?php echo $args['desc'] ; ?>
+		</p>
+	</div>
+	<?php
+}
+add_shortcode('item_gallery','sc_item_gallery');

@@ -25,6 +25,16 @@ jQuery(document).ready(function($){
       // itemsMobile : false
  	
   });
+
+  $('p.title-acc').click(function(){
+    $(this).next().slideToggle("slow");
+  })
+  $('.read-more-acc').click(function(){
+    $(this).prev().toggle('slow',function(){
+      if ($(this).is(':visible'))
+        $(this).css('display','inline');
+    });
+  })
 });
 
 
