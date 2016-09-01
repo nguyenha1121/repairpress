@@ -20,20 +20,22 @@
 </div>
 <div class="banner">
 	<div class="container">
-		<?php echo do_shortcode('[banner_item t1="No fix, no fee" t2="Lorem ipsum dolor sit." t3="fa-money"]'); ?>
-		<?php echo do_shortcode('[banner_item t1="No fix, no fee" t2="Lorem ipsum dolor sit." t3="fa-money"]'); ?>
-		<?php echo do_shortcode('[banner_item t1="No fix, no fee" t2="Lorem ipsum dolor sit." t3="fa-money"]'); ?>
-		<?php echo do_shortcode('[banner_item t1="No fix, no fee" t2="Lorem ipsum dolor sit." t3="fa-money"]'); ?>
+		<div class="content-banner">
+			<?php echo do_shortcode('[banner_item t1="No fix, no fee" t2="Lorem ipsum dolor sit." t3="fa-money"]'); ?>
+			<?php echo do_shortcode('[banner_item t1="No fix, no fee" t2="Lorem ipsum dolor sit." t3="fa-money"]'); ?>
+			<?php echo do_shortcode('[banner_item t1="No fix, no fee" t2="Lorem ipsum dolor sit." t3="fa-money"]'); ?>
+			<?php echo do_shortcode('[banner_item t1="No fix, no fee" t2="Lorem ipsum dolor sit." t3="fa-money"]'); ?>
+			</div>
 	</div>
 </div>
 <div class="first-row">
 	<div class="container">
-		<div class="fri-c">
+		<div class="fri-c row">
 			<?php echo do_shortcode('[fri1 src-img="http://tophinhanhdep.net/wp-content/uploads/2015/12/anh-dep-mua-xuan-5.jpg" title="Water damage repair" except="We offer free postage with all mobile phone & tablet repairs. Saving time and money. Just print the label and send." src-readmore="#"] '); ?>
 			<?php echo do_shortcode('[fri1 src-img="http://www.wn.com.vn/timthumb.php?src=http://www.wn.com.vn/product_images/c/178/dong-v%E1%BA%A1t-ngo-nghinh(1)__08823.jpg&w=1000&h=606&zc=1" title="Water damage repair" except="We offer free postage with all mobile phone & tablet repairs. Saving time and money. Just print the label and send." src-readmore="#"] '); ?>
 			<?php echo do_shortcode('[fri1 src-img="http://tophinhanhdep.net/wp-content/uploads/2015/12/anh-dep-mua-xuan-5.jpg" title="Water damage repair" except="We offer free postage with all mobile phone & tablet repairs. Saving time and money. Just print the label and send." src-readmore="#"] '); ?>
-			<div class="first-row-item fri2">
-				<ul>
+			<div class="first-row-item fri2 col-md-3 col-sm-3 col-xs-6">
+				<ul class="">
 					<?php echo do_shortcode('[fri2 href="#" name-i-tag="fa-laptop" title="Mac & Pc Repair"]'); ?>
 					<?php echo do_shortcode('[fri2 href="#" name-i-tag="fa-laptop" title="Mac & Pc Repair"]'); ?>
 					<?php echo do_shortcode('[fri2 href="#" name-i-tag="fa-laptop" title="Mac & Pc Repair"]'); ?>
@@ -133,6 +135,40 @@
 	</div>
 </div>
 
-<div class="row-testimonials"></div>
+<div class="row-testimonials">
+	<div class="container">
+		<div class="title-tes">
+			<p><?php _e('Testimonials','repairpress'); ?></p>
+		</div>
+		<div class="content-tes">
+			<div id="testi" class="owl-carousel owl-theme">
+				<?php echo do_shortcode('[add_testimonials rep = "But I must explain to you how all this mistakn idea of denouncing pleasure and praising pain was born and I will give you a complete of the system, and expound the actual teaings of the great explorer idea to be on the top of the mobile industry." author = "Joseph Jimenez"]'); ?>
+				<?php echo do_shortcode('[add_testimonials rep = "But I must explain to you how all this mistakn idea of denouncing pleasure and praising pain was born and I will give you a complete of the system, and expound the actual teaings of the great explorer idea to be on the top of the mobile industry." author = "Joseph Jimenez"]'); ?>
+				<?php echo do_shortcode('[add_testimonials rep = "But I must explain to you how all this mistakn idea of denouncing pleasure and praising pain was born and I will give you a complete of the system, and expound the actual teaings of the great explorer idea to be on the top of the mobile industry." author = "Joseph Jimenez"]'); ?>
+			</div>
+		</div>
+	</div>
+</div>
 
+<div class="row-partners">
+	<div class="container">
+		<div class="title-pa">
+			<p><?php echo __('Our respected partners','repairpress'); ?></p>
+			<span></span>
+		</div>
+		<div class="content-pa">
+			<?php echo do_shortcode('[add_partners href="#" src-img="http://ww1.prweb.com/prfiles/2012/09/13/9902388/MS%20partner%20logo.gif"]');?>
+			<?php echo do_shortcode('[add_partners href="#" src-img="http://ww1.prweb.com/prfiles/2012/09/13/9902388/MS%20partner%20logo.gif"]');?>
+			<?php echo do_shortcode('[add_partners href="#" src-img="http://ww1.prweb.com/prfiles/2012/09/13/9902388/MS%20partner%20logo.gif"]');?>
+			<?php echo do_shortcode('[add_partners href="#" src-img="http://ww1.prweb.com/prfiles/2012/09/13/9902388/MS%20partner%20logo.gif"]');?>
+			<?php echo do_shortcode('[add_partners href="#" src-img="http://ww1.prweb.com/prfiles/2012/09/13/9902388/MS%20partner%20logo.gif"]');?>
+		</div>
+	</div>
+</div>
+
+<div class="row-count">
+	<div class="container">
+		  <?php echo do_shortcode('[add_count_row num1="1234" text1="Nothing" num2="1,123.05" text2="EveryOne" num3="1.14" text3="Counter" num4="111.04" text4="Hello"]'); ?>
+	</div>
+</div>
 <?php get_footer(); ?>

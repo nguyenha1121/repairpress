@@ -10,9 +10,9 @@
      * For full documentation, please visit: http://docs.reduxframework.com/
      */
 
-    if ( ! class_exists( 'wp_02_Theme_Option' ) ) {
+    if ( ! class_exists( 'repairpress_Theme_Option' ) ) {
 
-        class wp_02_Theme_Option {
+        class repairpress_Theme_Option {
 
             public $args = array();
             public $sections = array();
@@ -57,61 +57,112 @@
 
                 // ACTUAL DECLARATION OF SECTIONS
                 $this->sections[] = array(
-                    'title'  => __( 'Header', 'wp_02' ),
-                    'desc'   => __( 'All of setings for header on this theme.', 'wp_02' ),
+                    'title'  => __( 'Header', 'repairpress' ),
+                    'desc'   => __( 'All of setings for header on this theme.', 'repairpress' ),
                     'icon'   => '',
-                    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                     'fields' => array(
-
-                        array(
-                            'id'       => 'logo-on',
-                            'type'     => 'switch',
-                            'title'    => __( 'Enable Image Logo', 'wp_02' ),
-                            'compiler' => 'bool',
-                            // Can be set to false to allow any media type, or can also be set to any mime type.
-                            'desc'     => __( 'Do you want to enable image logo?', 'wp_02' ),
-                            'on'        => __('Enabled', 'wp_02'),
-                            'off'       => __('Disabled', 'wp_02')
-                        ),
                         array(
                             'id'    => 'logo-image',
                             'type'  => 'media',
-                            'title' => __('Logo Image', 'wp_02'),
-                            'desc'  => __('Image that you want to use as logo.', 'wp_02')
+                            'title' => __('Logo Image', 'repairpress'),
+                            'desc'  => __('Image that you want to use as logo.', 'repairpress')
                         ),
+                        array(
+                            'id'    => 'banner-1',
+                            'type'  => 'textarea',
+                            'title' => __('Banner 1 header','repairpress'),
+                            'desc'  => __('i tag fontawesome and title', 'repairpress')
+                            ),
+                        array(
+                            'id'    => 'content-banner-1',
+                            'type'  => 'textarea',
+                            'title' => __('Variable banner 1','repairpress'),
+                            'desc'  => __('i tag fontawesome and title', 'repairpress')
+                            ),
+                        array(
+                            'id'    => 'banner-2',
+                            'type'  => 'textarea',
+                            'title' => __('Banner 2 header','repairpress'),
+                            'desc'  => __('i tag fontawesome and title', 'repairpress')
+                            ),
+                        array(
+                            'id'    => 'content-banner-2',
+                            'type'  => 'textarea',
+                            'title' => __('Variable banner 2','repairpress'),
+                            'desc'  => __('i tag fontawesome and title', 'repairpress')
+                            ),
+                        array(
+                            'id'    => 'banner-3',
+                            'type'  => 'textarea',
+                            'title' => __('Banner 3 header','repairpress'),
+                            'desc'  => __('i tag fontawesome and title', 'repairpress')
+                            ),
+                        array(
+                            'id'    => 'content-banner-3',
+                            'type'  => 'textarea',
+                            'title' => __('Variable banner 3 ','repairpress'),
+                            'desc'  => __('i tag fontawesome and title', 'repairpress')
+                            ),
+                        array(
+                            'id'    => 'button-text',
+                            'type'  => 'text',
+                            'title' => __('Text of button','repairpress'),
+                            'desc'  => __('', 'repairpress')
+                            ),
+                        array(
+                            'id'    => 'button-link',
+                            'type'  => 'text',
+                            'title' => __('Link of button ','repairpress'),
+                            'desc'  => __('Your link', 'repairpress')
+                            )
                     )
                 );
 
                 $this->sections[] = array(
-                    'title'  => __( 'Description Footer', 'wp_02' ),
-                    'desc'   => __( 'Setting 2 text field footer.', 'wp_02' ),
-                    'icon'   => 'el el-icon-font',
-
+                    'title'  => __( 'Footer', 'repairpress' ),
+                    'desc'   => __( 'All of setings for header on this theme.', 'repairpress' ),
+                    'icon'   => '',
                     'fields' => array(
                         array(
-                            'id'       => 'text-1-on',
-                            'type'     => 'switch',
-                            'title'    => __( 'Enable text field 1', 'wp_02' ),
-                            'compiler' => 'bool',
-                            // Can be set to false to allow any media type, or can also be set to any mime type.
-                            'desc'     => __( 'Do you want to enable text field 1?', 'wp_02' ),
-                            'on'        => __('Enabled', 'wp_02'),
-                            'off'       => __('Disabled', 'wp_02')
+                            'id'    => 'logo-footer',
+                            'type'  => 'media',
+                            'title' => __('Logo Image footer', 'repairpress'),
+                            'desc'  => __('Image that you want to use as logo in footer.', 'repairpress')
                         ),
                         array(
-                            'id' => 'txt-1',
-                            'type'=>'text',
-                            'title'=>__('Text field 1','wp_02'),
-                            'Description'=>__('Text')
-                            ),
-                        array(
-                            'id' => 'txt-2',
-                            'type'=>'text',
-                            'title'=>__('Text field 2','wp_02'),
-                            'Description'=>__('@','wp_02')
-                            )
+                            'id'    => 'desc-footer',
+                            'type'  => 'text',
+                            'title' => __('Description your site.', 'repairpress'),
+                            'desc'  => __('', 'repairpress')
+                        ),
+                         array(
+                            'id'    => 'contact-row1',
+                            'type'  => 'textarea',
+                            'title' => __('Contact row 1 ', 'repairpress'),
+                            'desc'  => __('icon and title', 'repairpress')
+                        ),
+                          array(
+                            'id'    => 'contact-row2',
+                            'type'  => 'textarea',
+                            'title' => __('Contact row 2 ', 'repairpress'),
+                            'desc'  => __('icon and title', 'repairpress')
+                        ),
+                         array(
+                            'id'    => 'contact-row3',
+                            'type'  => 'textarea',
+                            'title' => __('Contact row 3 ', 'repairpress'),
+                            'desc'  => __('icon and title', 'repairpress')
+                        ),
+                          array(
+                            'id'    => 'contact-row4',
+                            'type'  => 'textarea',
+                            'title' => __('Contact row 4 ', 'repairpress'),
+                            'desc'  => __('icon and title', 'repairpress')
+                        ),
                     )
                 );
+
+
             }
 
             public function setHelpTabs() {
@@ -143,7 +194,7 @@
 
                 $this->args = array(
                     // TYPICAL -> Change these values as you need/desire
-                    'opt_name'           => 'wp_02_options',
+                    'opt_name'           => 'RO',
                     // This is where your data is stored in the database and also becomes your global variable name.
                     'display_name'       => $theme->get( 'Name' ),
                     // Name that appears at the top of your panel
@@ -283,5 +334,5 @@
         }
 
         global $reduxConfig;
-        $reduxConfig = new wp_02_Theme_Option();
+        $reduxConfig = new repairpress_Theme_Option();
     }

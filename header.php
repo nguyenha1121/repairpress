@@ -47,33 +47,8 @@
 		</div>
 		<div class="container">
 			<div class="site-branding">			
-				<div class="logo-site">
-					<div class="image-logo">::TO DO</div>
-					<div class="name-site">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php
-					endif; ?>
-					</div>
-				</div>
-				<div class="contact-us">
-					<div class="inf1">
-						<p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;<span>Live Help</span></p>
-						<p class="value">191919919191</p>
-					</div>
-					<div class="inf1">
-						<p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;<span>Live Help</span></p>
-						<p class="value">191919919191</p>
-					</div>
-					<div class="inf1">
-						<p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;<span>Live Help</span></p>
-						<p class="value">191919919191</p>
-					</div>
-					<a href="#">Request A Quote</a>
-				</div>
+				<?php logo_site(); ?>
+				
 			</div>
 		</div>
 		<div class="navbar-primary">
@@ -94,5 +69,7 @@
 			</div>
 		</div>
 	</header><!-- #masthead -->
-
+	<div class="menu-res">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth'=>'3','menu_id' => 'menu-res' ) ); ?>
+	</div>
 	<div id="content" class="site-content">

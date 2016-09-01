@@ -125,6 +125,10 @@ function repairpress_scripts() {
 
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/customizer.js', array('jquery'), '20151215', true );
 
+	wp_enqueue_script( 'count up', get_template_directory_uri() . '/js/jquery.counterup.js', array('jquery'), '20151215', true );
+
+	wp_enqueue_script( 'count', 'http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js', array('jquery'), '20151215', true );
+
 	wp_enqueue_style( 'bug-less', get_template_directory_uri().'/bugless.css' );
 
 	wp_enqueue_script( 'repairpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -166,7 +170,72 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 
+//Logo site
+if(!function_exists('logo_site')){
+	function logo_site(){
+		global $RO;
+		?>
+		<div class="logo-site">
+			<div class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" >
+		            <img class=" img-logo" src="<?php echo $RO['logo-image']['url']; ?>" alt="logo">
+		        </a>
+			</div>
+		</div>
+		<div class="contact-us">
+			<div class="inf1">
+				<p class="title-bner"><?php echo $RO['banner-1']; ?></p>
+				<p class="value"><?php echo $RO['content-banner-1']; ?></p>
+			</div>
+			<div class="inf1">
+				<p class="title-bner"><?php echo $RO['banner-2']; ?></p>
+				<p class="value"><?php echo $RO['content-banner-2']; ?></p>
+			</div>
+			<div class="inf1">
+				<p class="title-bner"><?php echo $RO['banner-3']; ?></p>
+				<p class="value"><?php echo $RO['content-banner-3']; ?></p>
+			</div>
+			
+			<a href="<?php echo $RO['button-link'] ;?>"><?php echo $RO['button-text']; ?></a>
+		</div>
+		<?php
+	}
+}
 
+if(!function_exists('logo_footer')){
+	function logo_footer(){
+		global $RO;
+		?>
+		<div class="logo-footer">
+			<div class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" >
+		            <img class=" img-logo" src="<?php echo $RO['logo-footer']['url']; ?>" alt="logo">
+		        </a>
+			</div>
+		</div>
+		<p><?php echo $RO['desc-footer']; ?></p>
+		<div class="social-menu-icons">
+			<?php my_social_media_icons(); ?>		
+		</div>
+		<?php
+
+	}
+}
+
+if(!function_exists('contact_footer')){
+	function contact_footer(){
+		global $RO;
+		?>
+		<p class="title-contact-footer"><?php _e('Contact info','repairpress'); ?></p>
+		<div class="cont">
+			<p><?php echo $RO['contact-row1']; ?></p>
+			<p><?php echo $RO['contact-row2']; ?></p>
+			<p><?php echo $RO['contact-row3']; ?></p>
+			<p><?php echo $RO['contact-row4']; ?></p>
+		</div>
+		<?php
+	}
+}
 
 
 //Add customizer option------------------------------------------------------------------------------------------------------------------------------------
@@ -251,6 +320,32 @@ function my_add_customizer($wp_customize) {
 				'section'  => 'description-Top',
 				'type'     => 'text',
 				'priority' => 1,
+		) );
+// Desc footer
+	$wp_customize->add_section( 'description-foot', array(
+		'title'		=> __('Description footer','repairpress'),
+		'priority'	=> 50
+	) );
+	$wp_customize->add_setting('early',array(
+		'type'				=> 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'esc_html'
+		));
+	$wp_customize->add_control( 'early', array(
+				'label'    => __( "Headding", 'repairpress' ),
+				'section'  => 'description-foot',
+				'type'     => 'textarea',
+				'priority' => 1,
+		) );
+	$wp_customize->add_setting('late',array(
+		'type'				=> 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		));
+	$wp_customize->add_control( 'late', array(
+				'label'    => __( "Tail", 'repairpress' ),
+				'section'  => 'description-foot',
+				'type'     => 'textarea',
+				'priority' => 2,
 		) );
 
 }
@@ -483,7 +578,7 @@ function sc_banner_item($args,$content){
 add_shortcode('banner_item','sc_banner_item');
 
 function sc_first_row_1($args, $content){
-	return '<div class="first-row-item fri1">
+	return '<div class="first-row-item fri1 col-md-3 col-sm-3 col-xs-6">
 			<img src="'.$args['src-img'].'" alt="nothing">
 			<p class="title-fri">'.$args['title'].'</p>
 			<p class="except-fri">'.$args['except'].'</p>
@@ -673,3 +768,218 @@ function sc_item_gallery($args,$content){
 	<?php
 }
 add_shortcode('item_gallery','sc_item_gallery');
+
+function sc_add_testimonials($args,$content){
+	?>
+	<div class="item">
+		<p class="respond"><?php echo $args['rep']; ?></p>
+		<p class="author-tes"><?php echo $args['author']; ?></p>
+	</div>
+	<?php
+}
+add_shortcode('add_testimonials','sc_add_testimonials');
+
+
+function sc_add_partners($args,$content){
+	?>
+	<div class="item-pa ">
+		<a href="<?php echo $args['href']; ?> "><img src="<?php echo $args['src-img'] ?>" alt="img"></a>
+	</div>
+	<?php
+}
+add_shortcode('add_partners','sc_add_partners');
+
+function sc_add_count_row($args,$content){
+	?>
+	<div class="count-content">
+		  	<div class="item-count ic-1">
+		  		<p class="counter c-num"><?php echo $args['num1']; ?></p>
+		  		<p class="desc-count"><?php echo $args['text1']; ?></p>
+		  	</div>
+		  	<div class="item-count ic-1">
+		  		<p class="counter c-num"><?php echo $args['num2']; ?></p>
+		  		<p class="desc-count"><?php echo $args['text2']; ?></p>
+		  	</div>
+		  	<div class="item-count ic-1">
+		  		<p class="counter c-num"><?php echo $args['num3']; ?></p>
+		  		<p class="desc-count"><?php echo $args['text3']; ?></p>
+		  	</div>
+		  	<div class="item-count">
+		  		<p class="counter c-num"><?php echo $args['num4']; ?></p>
+		  		<p class="desc-count"><?php echo $args['text4']; ?></p>
+		  	</div>
+		  </div>
+	<?php 
+}
+add_shortcode('add_count_row','sc_add_count_row');
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Add fields to user profile screen, add new user screen
+ */
+
+function list_user_link(){
+	$list = array('facebook','twitter','linkedin','youtube');
+	return $list;
+}
+
+if( !function_exists('m_register_profile_fields') ) {
+
+    //  This action for 'Add New User' screen
+    add_action( 'user_new_form', 'm_register_profile_fields' );
+
+    //  This actions for 'User Profile' screen
+    add_action( 'show_user_profile', 'm_register_profile_fields' );
+    add_action( 'edit_user_profile', 'm_register_profile_fields' );
+
+    function m_register_profile_fields( $user ) {
+
+        if ( !current_user_can( 'administrator', $user_id ) )
+            return false;
+
+        ?>
+        <?php
+        $list = list_user_link();
+        ?>
+        <h3>Advance user</h3>
+        <table class="form-table">
+            <tr>
+                <th><label for="dropdown">Tag</label></th>
+                <td>
+                    <input type="text" class="regular-text" name="portal_cat" value="<?php echo esc_attr( get_the_author_meta( 'portal_cat', $user->ID ) ); ?>" id="portal_cat" /><br />
+                </td>         
+            </tr>
+            <?php
+            echo '<tr>';
+            foreach ($list as $k) {
+            	// var_dump($user);
+            	//var_dump(get_the_author_meta( $k , $user->ID ));
+            	echo '<th><label for="dropdown">'.$k.'</label></th><td>';
+            	echo '<input style="max-width : 250px;" type="text" class="regular-text '.$k.'" name="'.$k.'" value="'. esc_attr( get_the_author_meta( $k , $user->ID )).'" id="'.$k.'" /><br />';
+            	echo '</td>';
+            }
+            echo '</tr>';
+            ?>
+        </table>
+
+    <?php }
+}
+
+
+/**
+ *  Save portal category field to user profile page, add new profile page etc
+ */
+
+
+//  This action for 'Add New User' screen
+add_action( 'user_register', 'cp_save_profile_fields' );
+
+//  This actions for 'User Profile' screen
+add_action( 'personal_options_update', 'cp_save_profile_fields' );
+add_action( 'edit_user_profile_update', 'cp_save_profile_fields' );
+
+function cp_save_profile_fields( $user_id ) {
+	$list = list_user_link();
+
+    if ( !current_user_can( 'administrator', $user_id ) )
+        return false;
+
+    update_usermeta( $user_id, 'portal_cat', $_POST['portal_cat'] );
+
+    foreach ($list as $k) {
+    	update_usermeta( $user_id, $k ,$_POST[$k] );
+    }
+
+}
+
+function add_list_user_link($user_id){
+	$list = list_user_link();
+	foreach ($list as $k) {
+		if( strlen(  get_the_author_meta( $k, $user_id) ) > 0 ) {
+            $links[] = $k;
+        }
+	}
+	if ( ! empty( $links ) ) {
+		echo '<ul class="linkss">';
+		foreach ($links as $l) {
+			$class = 'fa fa-'.$l;
+			?>
+			 <li>
+	            <a class="<?php echo $l; ?>" target="_blank" href="<?php echo esc_html( get_the_author_meta( $l,$user_id) ); ?>">
+	                <i class="<?php echo esc_attr( $class ); ?>" title="<?php printf( __('%s icon', 'text-domain'), $l ); ?>"></i>
+	            </a>
+	        </li>
+			<?php
+		}
+		echo '</ul>';
+	}
+}
+
+function sc_teammate($args,$content){
+
+	// The Query
+	$user_query = new WP_User_Query( array( 'role' => 'Administrator' ) );
+
+	?>
+	<div class="content-about-team">
+		<div class="container">
+			<div class="title-team">
+				<div class="our-team"><?php _e('Our team','repairpress'); ;?></div><div class="line"></div>
+			</div>
+			<div class="row">
+				<div class="content-team ">
+				<?php 
+				if ( ! empty( $user_query->results ) ) {
+					foreach ( $user_query->results as $user ) {
+						?>
+						<div class="col-md-4 col-sm-4 col-xs-6">
+							<div class="item-team">
+								<div class="item-img">
+									<?php echo get_avatar($user->email,'large') ;?>
+									<p class="bureau"><?php echo get_the_author_meta('portal_cat',$user->ID) ;?></p>
+								</div>
+								<div class="content-items">
+									<h3 class="item-name"><?php echo $user->display_name; ?></h3>
+									<p class="item-desc"><?php echo get_the_author_meta('description',$user->ID) ;?></p>
+									<hr>
+									<div class="mxh"><p><?php _e('Meet me on:','repairpress') ?></p><?php add_list_user_link($user->ID);?></div>
+								</div>
+							</div>
+						</div>
+						<?php
+					}
+				} else {
+					echo 'No users found.';
+				}
+				?>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
+}
+add_shortcode('team','sc_teammate');
+
+
+function sc_future($args,$content){
+	?>
+	<div class="future">
+		<div class="container">
+			<div class="row">
+				<div class="content-fu">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+					<?php 
+					for($i=1 ; $i<= $args['num-item'] ; $i++){
+						echo '<p class="title-fu">'.$args['title-'.$i].'</p>'.'<p class="desc-fu">'.$args['content-'.$i].'</p>';
+					}
+					?>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12 img-fu">
+						<img src="<?php echo esc_url($args['src-img']); ?>" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php
+}
+add_shortcode('future','sc_future');

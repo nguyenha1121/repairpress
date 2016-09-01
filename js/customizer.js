@@ -26,15 +26,39 @@ jQuery(document).ready(function($){
  	
   });
 
+  $("#testi").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+    pagination: false,
+    navigationText: ['<i class="fa fa-caret-left" aria-hidden="true"></i>','<i class="fa fa-caret-right" aria-hidden="true"></i>']  
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+  
+  });
+
+  $('.menu-toggle').click(function(){
+    $('.menu-res').toggle();
+  });
+
+  $('.menu-toggle').text("Menu");
+
   $('p.title-acc').click(function(){
     $(this).next().slideToggle("slow");
-  })
+  });
   $('.read-more-acc').click(function(){
     $(this).prev().toggle('slow',function(){
       if ($(this).is(':visible'))
         $(this).css('display','inline');
     });
-  })
+  });
+  $('.counter').counterUp();
 });
 
 

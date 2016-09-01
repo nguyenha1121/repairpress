@@ -6,8 +6,8 @@
 <?php get_header(); ?>
 <div class="description-page">
 	<div class="container">
-		<h1><?php //echo the_title(); ?> Blog todo::</h1>
-		<p class="desc"><?php //the_field('description'); ?> Desc toto::</p>
+		<h1><?php echo the_title(); ?></h1>
+		<p class="desc"><?php the_field('description'); ?></p>
 	</div>
 </div>
 
@@ -24,69 +24,10 @@
         <?php endif; ?>
 	</div>
 </div>
-<div class="content-about-team">
-	<div class="container">
-		<div class="title-team">
-			<div class="our-team">Our Team todo::</div><div class="line"></div>
-		</div>
-		<div class="content-team">
-			<div class="item-team">
-				<div class="item-img"></div>
-				<a href="#">CEO&todo::</a>
-				<h3 class="item-name">Name todo::</h3>
-				<p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis!</p>
-				<hr>
-				<p><span>Meet me on:</span><span>List mxh</span></p>
-			</div><div class="item-team">
-				<div class="item-img"></div>
-				<a href="#">CEO&todo::</a>
-				<h3 class="item-name">Name todo::</h3>
-				<p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis!</p>
-				<hr>
-				<p><span>Meet me on:</span><span>List mxh</span></p>
-			</div><div class="item-team">
-				<div class="item-img"></div>
-				<a href="#">CEO&todo::</a>
-				<h3 class="item-name">Name todo::</h3>
-				<p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis!</p>
-				<hr>
-				<p><span>Meet me on:</span><span>List mxh</span></p>
-			</div><div class="item-team">
-				<div class="item-img"></div>
-				<a href="#">CEO&todo::</a>
-				<h3 class="item-name">Name todo::</h3>
-				<p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis!</p>
-				<hr>
-				<p><span>Meet me on:</span><span>List mxh</span></p>
-			</div><div class="item-team">
-				<div class="item-img"></div>
-				<a href="#">CEO&todo::</a>
-				<h3 class="item-name">Name todo::</h3>
-				<p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis!</p>
-				<hr>
-				<p><span>Meet me on:</span><span>List mxh</span></p>
-			</div><div class="item-team">
-				<div class="item-img"></div>
-				<a href="#">CEO&todo::</a>
-				<h3 class="item-name">Name todo::</h3>
-				<p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis!</p>
-				<hr>
-				<p><span>Meet me on:</span><span>List mxh</span></p>
-			</div><div class="item-team">
-				<div class="item-img"></div>
-				<a href="#">CEO&todo::</a>
-				<h3 class="item-name">Name todo::</h3>
-				<p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis!</p>
-				<hr>
-				<p><span>Meet me on:</span><span>List mxh</span></p>
-			</div><div class="item-team">
-				<div class="item-img"></div>
-				<a href="#">CEO&todo::</a>
-				<h3 class="item-name">Name todo::</h3>
-				<p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis!</p>
-				<hr>
-				<p><span>Meet me on:</span><span>List mxh</span></p>
-			</div>
-		</div>
-	</div>
-</div>
+
+<?php echo do_shortcode('[team]'); ?>
+<?php echo do_shortcode('[future num-item="2" title-1="Our mission" content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus facilisis dui a ex tempor, eu vestibulum nunc viverra. Mauris non est ultrices, vestibulum mauris eget, tristique elit. Praesent nec nisi at libero dictum rutrum.  Duis a justo at ipsum suscipit vehicula at eu quam." title-2="Our vision" content-2="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus facilisis dui a ex tempor, eu vestibulum nunc viverra. Mauris non est ultrices, vestibulum mauris eget, tristique elit. Praesent nec nisi at libero dictum rutrum.  Duis a justo at ipsum suscipit vehicula at eu quam." src-img="http://img.news.zing.vn/img/537/t537860.jpg"]'); ?>
+<div></div>
+<?php
+	get_footer();
+?>

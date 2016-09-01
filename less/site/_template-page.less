@@ -1,6 +1,10 @@
 // About Page
+.content-about-team{
+	padding:50px 0;
+}
 div.title-team{
 	display: flex;
+	padding:20px 0;
 	.our-team{
 		width: 20%;
 		font-size: 35px;
@@ -14,12 +18,105 @@ div.title-team{
 	}
 }
 .content-team{
-	background: red;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap:wrap;
+	h3{
+		margin: 0;
+		font-size: 27px;
+		font-family: Roboto Bold;
+
+	}
+	.item-img{
+		position: relative;
+		max-height: 270px;
+		img{
+			width: 100%;
+			max-height: 270px;
+		}
+		>p{
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+			font-size: 14px;
+			font-family: Roboto Bold;
+			text-transform: uppercase;
+			color: #fff;
+			background: #2b4c7e;
+			padding:6px 8px;
+			border-radius: 5px;
+		}
+		
+	}
 	.item-team{
-		background:blue;
-		width: 30%;
+		margin-bottom:30px;
+		.content-items{
+			border-top: 5px solid #d2d2d2;
+			padding:30px 30px 0 30px;
+			border-left: 1px solid #eeeeee;
+			border-right: 1px solid #eeeeee;
+			border-bottom: 1px solid #eeeeee;
+		}
+		.item-desc{
+			margin-top:20px;
+			height: 140px;
+			color: #999999;
+			//border-bottom: 1px solid #999999;
+		}
+	}
+	.mxh{
+		display: flex;
+		justify-content:space-between;
+		padding-bottom: 10px;
+		p{
+			font-size: 16px;
+			font-family: Roboto Bold;
+			color: #999999;
+		}
+	}
+	ul.linkss{
+		display: flex;
+		margin:0;
+		li{
+			list-style-type: none;
+			a{
+				margin-left: 3px;
+				i{
+					border-radius: 4px;
+					font-size: 20px;
+					background: #bbbbbb;
+					color: #fff;
+					width: 20px;
+					text-align: center;
+				}
+			}
+			&:hover{
+				i{
+					background: #3baed4;
+				}
+			}
+		}
+	}
+	.item-team:hover .content-items{
+		border-top: 5px solid #3baed4;
+	}
+		
+	
+}
+
+.future{
+	padding:50px 0;
+}
+.title-fu{
+	font-family: Roboto Bold;
+	font-size: 27px;
+	margin-bottom: 10px;
+}
+.desc-fu{
+	font-family: Roboto Light;
+	font-size: 14px;
+	color: #999999;
+	margin-bottom: 30px;
+}
+.img-fu{
+	img{
+		width: 100%;
 	}
 }
