@@ -983,3 +983,61 @@ function sc_future($args,$content){
 	<?php
 }
 add_shortcode('future','sc_future');
+
+function sc_time_line($args,$content){
+	?>
+	<div class="time-line">
+		<div class="container">
+			<div class="row">
+				<div class="content-time-line">
+					<div class="col-md-3 col-sm-4 col-xs-6 time-line-box">
+						<div class="item-box">
+							<p class="year-tl"><?php echo $args['year-1'] ?></p>
+							<div class="roundedOne">
+						      <input type="checkbox" value="None" id="roundedOne" name="check" checked  />
+						      <label for="roundedOne"></label>
+						    </div>
+							<p class="desc-tl"><?php echo $args['title-1'] ?></p>
+						</div>
+						<div class="item-box">
+							<p class="year-tl"><?php echo $args['year-2'] ?></p>
+							<div class="roundedOne1">
+						      <input type="checkbox" value="None" id="roundedOne1" name="check" checked  />
+						      <label for="roundedOne1"></label>
+						    </div>
+							<p class="desc-tl"><?php echo $args['title-2'] ?></p>
+						</div>
+						<div class="item-box">
+							<p class="year-tl"><?php echo $args['year-3'] ?></p>
+							<div class="roundedOne2">
+						      <input type="checkbox" value="None" id="roundedOne2" name="check" checked   />
+						      <label for="roundedOne2"></label>
+						    </div>
+							<p class="desc-tl"><?php echo $args['title-3'] ?></p>
+						</div>
+						<div class="item-box last-ch">
+							<p class="year-tl"><?php echo $args['year-4'] ?></p>
+							<div class="roundedOne3">
+						      <input type="checkbox" value="None" id="roundedOne3" name="check" checked  />
+						      <label for="roundedOne3"></label>
+						    </div>
+							<p class="desc-tl"><?php echo $args['title-4'] ?></p>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-5 col-xs-6">
+						<p class="title-tl">
+							<?php echo $args['title-time-line'] ?>
+						</p>
+						<p class="desc-t"><?php echo $args['description'] ?></p>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12 imgs-tl">
+						<img src="<?php echo $args['src-img-1'] ?>" alt="img">
+						<img src="<?php echo $args['src-img-2'] ?>" alt="img">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php
+}
+add_shortcode('time_line','sc_time_line');

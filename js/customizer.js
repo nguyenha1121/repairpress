@@ -59,7 +59,38 @@ jQuery(document).ready(function($){
     });
   });
   $('.counter').counterUp();
+  $( "#roundedOne3" ).change(function() {
+  if($("#roundedOne3").prop( "checked" )) {
+    $(".roundedOne3").css("background","#3baed4");}
+   else {
+    $(".roundedOne3").css("background","#e4e4e4");
+  }
+}).change();
+
+  $( "#roundedOne" ).change(function() {
+  if($("#roundedOne").prop( "checked" )) {
+    $(".roundedOne").css("background","#3baed4");}
+   else {
+    $(".roundedOne").css("background","#e4e4e4");
+  }
+}).change();
+  $( "#roundedOne2" ).change(function() {
+  if($("#roundedOne2").prop( "checked" )) {
+    $(".roundedOne2").css("background","#3baed4");}
+   else {
+    $(".roundedOne2").css("background","#e4e4e4");
+  }
+}).change();
+  $( "#roundedOne1" ).change(function() {
+  if($("#roundedOne1").prop( "checked" )) {
+    $(".roundedOne1").css("background","#3baed4");}
+   else {
+    $(".roundedOne1").css("background","#e4e4e4");
+  }
+}).change();
+  $('.item-box:last-child:after').css("display","none");
 });
+
 
 
 
